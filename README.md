@@ -33,6 +33,13 @@ The application is split into two main components:
 
 To set up the project on your local machine:
 
+First, clone the repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/Respirayson/gcc-sftp-webpage.git
+cd gcc-sftp-webpage
+```
+
 ### Backend Installation:
 
 Navigate to the backend directory and install dependencies:
