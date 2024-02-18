@@ -11,37 +11,47 @@ function App() {
 
   const handleAddition = async () => {
     // Backend accepts a post request using (application/x-www-form-urlencoded)
-    const response = await axios.post(
-      "http://localhost:8080/api/v1/calculator/add",
-      {
-        operand1: operand1,
-        operand2: operand2,
-      },
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/calculator/add",
+        {
+          operand1: operand1,
+          operand2: operand2,
         },
-      }
-    );
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
 
-    setResult(response.data.result);
+      setResult(response.data.result);
+    } catch (error) {
+      window.alert("The following error occurred: " + error.message);
+      console.error(error);
+    }
   };
 
   const handleSubtraction = async () => {
     // Backend accepts a post request using (application/x-www-form-urlencoded)
-    const response = await axios.post(
-      "http://localhost:8080/api/v1/calculator/subtract",
-      {
-        operand1: operand1,
-        operand2: operand2,
-      },
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/calculator/subtract",
+        {
+          operand1: operand1,
+          operand2: operand2,
         },
-      }
-    );
-    setResult(response.data.result);
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+      setResult(response.data.result);
+    } catch (error) {
+      window.alert("The following error occurred: " + error.message);
+      console.error(error);
+    }
   };
 
   return (
